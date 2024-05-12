@@ -1,0 +1,132 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooms reservation center</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body> -->
+    <!-- <form action="/book" method="post" class="myroom"> -->
+    <!-- <div class="cont">
+        <div class="logo">
+            <img src="/bg.jpg" alt="Error loading image">
+        </div>
+        <ul>
+            <li class="box"><a href="/">Home</a> </li>
+            <li class="box"><a href="/#about">About</a> </li>
+            <li class="box"><a href="/#services">Services</a> </li>
+            <li class="box"><a href="/contact">Contact us</a> </li>
+        </ul>
+    </div>
+
+    <section class="ser">
+        <h1>Rooms Booking</h1>
+        <ul>
+            <form action="/book/1" method="post">
+                <button class="btn bt2">
+                    Room 1
+                </button>
+            </form>
+            <form action="/book/2" method="post">
+                <button class="btn bt2">
+                    Room 2
+                </button>
+            </form>
+            <form action="/book/3" method="post">
+                <button class="btn bt2">
+                    Room 3
+                </button>
+            </form>
+            <form action="/book/4" method="post">
+                <button class="btn bt2">
+                    Room 4
+                </button>
+            </form>
+            <form action="/book/5" method="post">
+                <button class="btn bt2">
+                    Room 5
+                </button>
+            </form>
+        </ul>
+        <ul>
+            <form action="/book/6" method="post">
+                <button class="btn bt2">
+                    Room 6
+                </button>
+            </form>
+            <form action="/book/7" method="post">
+                <button class="btn bt2">
+                    Room 7
+                </button>
+            </form>
+            <form action="/book/8" method="post">
+                <button class="btn bt2">
+                    Room 8
+                </button>
+            </form>
+            <form action="/book/9" method="post">
+                <button class="btn bt2">
+                    Room 9
+                </button>
+            </form>
+            <form action="/book/10" method="post">
+                <button class="btn bt2">
+                    Room 10
+                </button>
+            </form>
+        </ul>
+
+    </section>
+    <footer>
+        | copyright @ 2023 RoomsBookingCenter.com | All rights reserved
+    </footer> -->
+
+    <!-- </form> -->
+
+<!-- </body>
+
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooms reservation center</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="cont">
+        <div class="logo">
+            <img src="/bg.jpg" alt="Error loading image">
+        </div>
+        <ul>
+            <li class="box"><a href="/">Home</a> </li>
+            <li class="box"><a href="/#about">About</a> </li>
+            <li class="box"><a href="/#services">Services</a> </li>
+            <li class="box"><a href="/contact">Contact us</a> </li>
+        </ul>
+    </div>
+
+    <section class="ser">
+        <h1>Rooms Booking</h1>
+        <% if(roomNumber) { %>
+            <p>Room number <%= roomNumber %> is available. Thank you for booking!</p>
+            <p>Your User ID is: <%= userId %> "</p> <!-- Display the user ID -->
+            <p>Please make sure to save this User ID for future reference when freeing the room.</p>
+            <button class="btnn" onclick="window.location.href='/Congratulations.html';">Next</button>
+        <% } else { %>
+            <p>Sorry, all rooms are booked.</p>
+            <button class="btnn" onclick="window.location.href='/';">Back to Home</button>
+        <% } %>
+       
+    
+    </section>
+
+    <footer>
+        | copyright @ 2023 RoomsBookingCenter.com | All rights reserved
+    </footer>
+</body>
+</html>

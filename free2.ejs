@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Up Room</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="cont">
+        <div class="logo">
+            <img src="/bg.jpg" alt="Error loading image">
+        </div>
+        <ul>
+            <li class="box"><a href="/">Home</a> </li>
+            <li class="box"><a href="/#about">About</a> </li>
+            <li class="box"><a href="/#services">Services</a> </li>
+            <li class="box"><a href="/contact">Contact us</a> </li>
+        </ul>
+    </div>
+    <section class="ser">
+        <h1>Free Up Room</h1>
+        <% if (successMessage) { %>
+            <p class="success"><%= successMessage %></p>
+        <center>
+            <p>Departure Date: <span id="departureTime"></span></p>
+        </center>
+            <button class="btn" onclick="window.location.href='/money.html';">Pay Money</button>
+        <% } %>
+    </section>
+    <script>
+        // Get the current date and time
+        const currentDateTime = new Date();
+
+        // Format the date as desired (e.g., YYYY-MM-DD)
+        const formattedDate = currentDateTime.toISOString().split('T')[0];
+        
+        // Format the time as desired (e.g., HH:MM:SS)
+        const formattedTime = currentDateTime.toLocaleTimeString();
+
+        // Display the departure date and time on the webpage
+        document.getElementById('departureTime').textContent = formattedDate + ', Departure Time ' + formattedTime;
+    </script>
+</body>
+</html>
