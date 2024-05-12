@@ -1,0 +1,57 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooms reservation center</title>
+    <link rel="stylesheet" href="/style.css">
+    <!-- <link rel="stylesheet" href="./static/style.css"> -->
+    <!-- sirf html file live server pe run krny k liye -->
+</head>
+
+<body>
+        <div class="cont">
+            <div class="logo">
+                <!-- <img src="./static/bg.jpg" alt="Error loading image"> -->
+                <img src="/bg.jpg" alt="Error loading image">
+
+            </div>
+            <ul>
+                <li class="box"><a href="/">Home</a> </li>
+                <li class="box"><a href="/#about">About</a> </li>
+                <li class="box"><a href="/#services">Services</a> </li>
+                <li class="box"><a href="/contact">Contact us</a> </li>
+            </ul>
+        </div>
+
+        <section class="ser">
+            <center><h1>Congratulations! <br>The room has been successfully booked.</h1>
+        </center>
+            <p>Arrival Date: <span id="arrivalDate"></span></p>
+        </center>
+            <button class="btn" onclick="window.location.href='/';">Back to Home</button>
+            <button class="btun" onclick="window.location.href='/services.html';">Services</button>
+            </section>
+        <footer>
+            | copyright @ 2023 RoomsBookingCenter.com | All rights reserved
+        </footer>
+        <script>
+            // Get the current date
+            const currentDate = new Date();
+    
+            // Format the date as desired (e.g., YYYY-MM-DD)
+            const formattedDate = currentDate.toISOString().split('T')[0];
+    
+             // Format the time as desired (e.g., HH:MM:SS)
+             const formattedTime = currentDate.toLocaleTimeString();
+    
+            // Display the arrival date on the webpage
+            document.getElementById('arrivalDate').textContent = formattedDate + ', Arrival Time ' + formattedTime;
+        </script>
+
+</body>
+
+</html>

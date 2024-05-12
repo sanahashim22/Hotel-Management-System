@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooms reservation center</title>
+    <link rel="stylesheet" href="/style.css">
+    
+</head>
+
+<body>
+        <div class="cont">
+            <div class="logo">
+                <img src="/bg.jpg" alt="Error loading image">
+            </div>
+            <ul>
+                <li class="box"><a href="/">Home</a> </li>
+                <li class="box"><a href="/#about">About</a> </li>
+                <li class="box"><a href="/#services">Services</a> </li>
+                <li class="box"><a href="/contact">Contact us</a> </li>
+            </ul>
+        </div>
+
+        <section class="ser">
+            <h1>Sign up</h1>
+            <form action="/sign1" method="post" class="my" id="message"
+                onsubmit="event.preventDefault(); validateForm();">
+                <div class="boxx">
+                    <input type="email" name="email" id="email" placeholder="Enter your Email:" required>
+                </div>
+                <div class="boxx">
+                    <input type="password" name="password" id="password" placeholder="Enter your Password:" minlength="4" maxlength="8" required>
+                </div>
+                <button class="btnn">Sign up</button>
+            </form>
+            <form action="/contact" method="get" class="my">
+                <button class="btnn" onclick="window.location.href='/contact.html';">Back</button>
+            </form>
+
+        </section>
+        <footer>
+            | copyright @ 2023 RoomsBookingCenter.com | All rights reserved
+        </footer>
+
+
+
+
+
+        <script>
+            function validateForm() {
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+        
+                fetch('/sign1', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email: email, password: password })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert(data.message);
+                        document.getElementById('email').value = '';
+                        document.getElementById('password').value = '';
+                    } else {
+                        alert(data.message);
+                        document.getElementById('email').value = '';
+                        document.getElementById('password').value = '';
+                    }
+                })
+                .catch(error => {
+                    alert('Error occurred during sign-up.');
+                });
+                return false;
+            }
+        </script>
+        
+</body>
+
+</html>
