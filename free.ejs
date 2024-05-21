@@ -10,8 +10,8 @@
 </head>
 
 <body> -->
-    <!-- <form action="/free" method="post" class="myroom"> -->
-        <!-- <div class="cont">
+<!-- <form action="/free" method="post" class="myroom"> -->
+<!-- <div class="cont">
             <div class="logo">
                 <img src="/bg.jpg" alt="Error loading image">
             </div>
@@ -83,7 +83,7 @@
         <footer>
             | copyright @ 2023 RoomsBookingCenter.com | All rights reserved
         </footer> -->
-    <!-- </form> -->
+<!-- </form> -->
 
 <!-- 
 </body>
@@ -94,14 +94,16 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Free Up Room</title>
     <link rel="stylesheet" href="/style.css">
 </head>
+
 <body>
-    
+
     <div class="cont">
         <div class="logo">
             <img src="/bg.jpg" alt="Error loading image">
@@ -112,26 +114,35 @@
             <li class="box"><a href="/">Home</a> </li>
             <li class="box"><a href="/#about">About</a> </li>
             <li class="box"><a href="/#services">Services</a> </li>
-            <li class="box"><a href="/contact">Contact us</a> </li>
+            <li class="box"><a href="/contact">Registration</a> </li>
         </ul>
     </div>
-    
-        <!-- <section class="ser h"></section>
-            <h3>Free Up Room</h3>
-            <form action="/free" method="post" class="my">
-                <h3>USER ID Details</h3>
-                
-                <label for="userId" >User ID:</label>
-                <input type="text" id="userId" name="userId" placeholder="User ID">
-                <button type="submit" class="btn sub">Free Room</button>
-            </form>
-        </section> -->
-        <section class="ser h">
-            <h2>User ID Details</h2>
-            <form action="/free" method="post" class="my">
-                <input type="text" id="userId" name="userId" placeholder="Enter User ID">
-                <button type="submit" class="btn sub">Free Room</button>
-            </form>
-        </section>
+
+    <section class="ser h">
+        <h2>Room ID Details</h2>
+        <form action="/free" method="post" class="my">
+            <!-- <input type="text" id="userId" name="userId" placeholder="Enter Room ID"> -->
+            <!-- <button type="submit" class="btn sub">Free Room</button> -->
+            <div class="container">
+                <input type="text" name="userId" id="userId" class="input" required>
+                <label class="label"> Enter Room Id:</label>
+            </div>
+            <button class="animated-button">
+                <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                    </path>
+                </svg>
+                <span class="text">Free Room</span>
+                <span class="circle"></span>
+                <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                    </path>
+                </svg>
+            </button>
+        </form>
+    </section>
 </body>
+
 </html>
