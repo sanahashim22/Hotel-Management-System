@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rooms reservation center</title>
+    <title>Hotel Management System</title>
     <link rel="stylesheet" href="/style.css">
 
 </head>
@@ -18,7 +18,7 @@
             <li class="box"><a href="/">Home</a> </li>
             <li class="box"><a href="/#about">About</a> </li>
             <li class="box"><a href="/#services">Services</a> </li>
-            <li class="box"><a href="/contact">Contact us</a> </li>
+            <li class="box"><a href="/contact">Registration</a> </li>
         </ul>
     </div>
 
@@ -27,21 +27,36 @@
         <div class="box">
             <form action="/book" method="post">
                 <!-- <button class="btn" onclick="window.location.href='/book.html';">Room Booking</button> -->
-                <button class="btn bt2">Book Room</button>
-
+                <!-- <button class="btnSS bt2s">Book Room</button> -->
+                <button class="btn-31">
+                    <span class="text-container">
+                        <span class="text">Book Room</span>
+                    </span>
+                </button>
             </form>
             <!-- <button class="btn" onclick="window.location.href='/free.html';">Room Free</button> -->
             <form action="/free" method="get"> <!-- Changed action to /free-room -->
-                <button class="btn">Room Free</button>
+                <!-- <button class="btn">Room Free</button> -->
+                <button class="btn-31">
+                    <span class="text-container">
+                        <span class="text">Room Free</span>
+                    </span>
+                </button>
             </form>
+        </div>
+        <!-- Add the button to redirect to services.html -->
+        <div class="box">
+            <!-- <button class="btunS" onclick="window.location.href='/services.html';">Services</button> -->
+            <button class="btn-31" onclick="window.location.href='/services.html';">
+                <span class="text-container">
+                    <span class="text">Services</span>
+                </span>
+            </button>
         </div>
     </section>
     <footer>
-        | copyright @ 2024 RoomsBookingCenter.com | All rights reserved
+        | copyright @ 2024 HotelManagementSystem.com | All rights reserved
     </footer>
-
-
-
 </body>
 
 </html>

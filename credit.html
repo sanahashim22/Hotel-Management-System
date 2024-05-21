@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Management System</title>
+    <link rel="stylesheet" href="/style.css">
+    <!-- <link rel="stylesheet" href="./views/static/style.css"> -->
+
+</head>
+
+<body>
+    <div class="cont">
+        <div class="logo">
+            <img src="/bg.jpg" alt="Error loading image">
+            <!-- <img src="./views/static/bg.jpg" alt="Error loading image"> -->
+
+        </div>
+        <ul>
+            <li class="box"><a href="/">Home</a> </li>
+            <li class="box"><a href="/#about">About</a> </li>
+            <li class="box"><a href="/#services">Services</a> </li>
+            <li class="box"><a href="/contact">Registration</a> </li>
+        </ul>
+    </div>
+
+    <!-- <section class="ser h"> -->
+    <!-- <h1>Credit Card Details</h1> -->
+    <!-- <form action="/thanks.html" method="get" class="my"> -->
+    <!-- <input type="text" name="name" id="name" placeholder="Enter your name"> -->
+    <!-- <input type="text" name="id" id="id" placeholder="Enter your id">
+                <input type="number" name="number" id="number" placeholder="Enter card no"> -->
+    <!-- <input type="number" name="number" id="number" placeholder="Enter card no"> -->
+    <!-- <input type="date" name="date" id="date" placeholder="Enter date (MM/YY)"> -->
+    <!-- <input type="password" name="password" id="password" placeholder="Enter security no"> -->
+    <!-- <button class="btn sub">Submit</button> -->
+    <!-- </form> -->
+    <!-- </section> -->
+    <section class="ser h">
+        <h1>Credit Card Details</h1>
+        <form action="/thanks.html" method="post" class="my">
+            <!-- <input type="text" name="name" id="name" placeholder="Enter your full name" required> -->
+            <div class="container">
+                <input type="text" name="name" id="name" class="input" required>
+                <label class="label"> Enter your full name:</label>
+            </div>
+
+            <!-- <input type="text" name="card-number" id="card-number" placeholder="Enter card number" required> -->
+            <div class="container">
+                <input type="text" name="card-number" id="card-number" class="input" required>
+                <label class="label"> Enter your card number:</label>
+            </div>
+            <!-- <input type="text" name="expiry-date" id="expiry-date" placeholder="MM/YY" pattern="\d{2}/\d{2}" required> -->
+            <div class="container">
+                <input type="text" name="expiry-date" id="expiry-date" class="input" pattern="\d{2}/\d{2}" required>
+                <label class="label">MM/YY</label>
+            </div>
+            <!-- <input type="password" name="cvv" id="cvv" placeholder="Enter CVV" minlength="3" maxlength="4" required> -->
+            <div class="container">
+                <input type="password" name="cvv" id="cvv" class="input" minlength="3" maxlength="4" required>
+                <label class="label">Enter CVV:</label>
+            </div>
+            <!-- <button type="submit" class="btn sub">Submit</button> -->
+            <button type="submit" class="animated-button">
+                <!-- <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                    </path>
+                </svg> -->
+                <svg class="svgIcon-2" viewBox="0 0 576 512">
+                    <path
+                        d="M512 80c8.8 0 16 7.2 16 16v32H48V96c0-8.8 7.2-16 16-16H512zm16 144V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V224H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm56 304c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm128 0c-13.3 0-24 10.7-24 24s10.7 24 24 24H360c13.3 0 24-10.7 24-24s-10.7-24-24-24H248z">
+                    </path>
+                </svg>
+                <span class="text">Submit</span>
+                <span class="circle"></span>
+                <!-- <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                    </path>
+                </svg> -->
+                <svg class="svgIcon-1" viewBox="0 0 576 512">
+                    <path
+                        d="M512 80c8.8 0 16 7.2 16 16v32H48V96c0-8.8 7.2-16 16-16H512zm16 144V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V224H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm56 304c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm128 0c-13.3 0-24 10.7-24 24s10.7 24 24 24H360c13.3 0 24-10.7 24-24s-10.7-24-24-24H248z">
+                    </path>
+                </svg>
+            </button>
+        </form>
+    </section>
+
+    <footer>
+        | copyright @ 2024 HotelManagementSystem.com | All rights reserved
+    </footer>
+</body>
+
+</html>
