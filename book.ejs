@@ -9,8 +9,8 @@
 </head>
 
 <body> -->
-    <!-- <form action="/book" method="post" class="myroom"> -->
-    <!-- <div class="cont">
+<!-- <form action="/book" method="post" class="myroom"> -->
+<!-- <div class="cont">
         <div class="logo">
             <img src="/bg.jpg" alt="Error loading image">
         </div>
@@ -84,19 +84,21 @@
         | copyright @ 2023 RoomsBookingCenter.com | All rights reserved
     </footer> -->
 
-    <!-- </form> -->
+<!-- </form> -->
 
 <!-- </body>
 
 </html> -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rooms reservation center</title>
+    <title>Hotel Management System</title>
     <link rel="stylesheet" href="/style.css">
 </head>
+
 <body>
     <div class="cont">
         <div class="logo">
@@ -106,7 +108,7 @@
             <li class="box"><a href="/">Home</a> </li>
             <li class="box"><a href="/#about">About</a> </li>
             <li class="box"><a href="/#services">Services</a> </li>
-            <li class="box"><a href="/contact">Contact us</a> </li>
+            <li class="box"><a href="/contact">Registration</a> </li>
         </ul>
     </div>
 
@@ -114,19 +116,30 @@
         <h1>Rooms Booking</h1>
         <% if(roomNumber) { %>
             <p>Room number <%= roomNumber %> is available. Thank you for booking!</p>
-            <p>Your User ID is: <%= userId %> "</p> <!-- Display the user ID -->
-            <p>Please make sure to save this User ID for future reference when freeing the room.</p>
-            <button class="btnn" onclick="window.location.href='/Congratulations.html';">Next</button>
-        <% } else { %>
-            <p>Sorry, all rooms are booked.</p>
-            <button class="btnn" onclick="window.location.href='/';">Back to Home</button>
-        <% } %>
-       
-    
+            <p>Your Room ID is: "<%= userId %>"</p> <!-- Display the user ID -->
+            <p>Please make sure to save this Room ID for future reference when freeing the room.</p>
+            <!-- <button class="btnn" onclick="window.location.href='/Congratulations.html';">Next</button> -->
+            <button class="btn-31" onclick="window.location.href='/Congratulations.html';">
+                <span class="text-container">
+                    <span class="text">Next</span>
+                </span>
+            </button>
+            <% } else { %>
+                <p>Sorry, all rooms are booked.</p>
+                <!-- <button class="btnn" onclick="window.location.href='/';">Back to Home</button> -->
+                <button class="btn-31" onclick="window.location.href='/';">
+                    <span class="text-container">
+                        <span class="text">Back to Home</span>
+                    </span>
+                </button>
+                <% } %>
+
+
     </section>
 
     <footer>
-        | copyright @ 2023 RoomsBookingCenter.com | All rights reserved
+        | copyright @ 2024 RoomsBookingCenter.com | All rights reserved
     </footer>
 </body>
+
 </html>
