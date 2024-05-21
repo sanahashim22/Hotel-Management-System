@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rooms reservation center</title>
+    <title>Hotel Management System</title>
     <link rel="stylesheet" href="/style.css">
 
 </head>
@@ -16,32 +16,69 @@
         </div>
         <ul>
             <li class="box"><a href="/">Home</a> </li>
-            <li class="box"><a href="#about">About</a> </li>
-            <li class="box"><a href="#services">Services</a> </li>
-            <li class="box"><a href="/contact">Contact us</a> </li>
+            <li class="box"><a href="/#about">About</a> </li>
+            <li class="box"><a href="/#services">Services</a> </li>
+            <li class="box"><a href="/contact">Registration</a> </li>
         </ul>
     </div>
 
     <section class="ser">
         <h1>Log in</h1>
         <form action="/sign2" method="post" class="my" id="message" onsubmit="event.preventDefault(); validateForm();">
-            <div class="boxx">
+            <!-- <div class="boxx">
                 <input type="email" name="email" id="email" placeholder="Enter your Email:" required>
+            </div> -->
+            <div class="container">
+                <input type="email" name="email" id="email" class="input" required>
+                <label class="label"> Enter your Email:</label>
             </div>
-            <div class="boxx">
+            <!-- <div class="boxx">
                 <input type="password" name="password" id="password" placeholder="Enter your Password:" minlength="4"
                     maxlength="8" required>
                 <img src="/eye-close.png" id="eyeicon">
+            </div> -->
+            <div class="container">
+                <input type="password" name="password" id="password" class="input" minlength="4" maxlength="8" required>
+                <label class="label"> Enter your Password:</label>
+                <img src="/eye-close.png" id="eyeicon" class="immg">
             </div>
-            <button class="btnn">Log in</button>
+            <!-- <button class="btnn">Log in</button> -->
+            <button class="animated-button">
+                <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                    </path>
+                </svg>
+                <span class="text">Log in</span>
+                <span class="circle"></span>
+                <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                    </path>
+                </svg>
+            </button>
         </form>
         <form action="/contact" method="get" class="my">
-            <button class="btnn" onclick="window.location.href='/contact.html';">Back</button>
+            <!-- <button class="btnn" onclick="window.location.href='/contact.html';">Back</button> -->
+            <button class="animated-button" onclick="window.location.href='/contact.html';">
+                <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                    </path>
+                </svg>
+                <span class="text">Back</span>
+                <span class="circle"></span>
+                <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                    </path>
+                </svg>
+            </button>
         </form>
 
     </section>
     <footer>
-        | copyright @ 2024 RoomsBookingCenter.com | All rights reserved
+        | copyright @ 2024 HotelManagementSystem.com | All rights reserved
     </footer>
 
 
