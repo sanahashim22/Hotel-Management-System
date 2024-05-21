@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="cont">
+        <div class="logo">
+            <img src="/bg.jpg" alt="Error loading image">
+        </div>
+        <ul>
+            <li class="box"><a href="/">Home</a> </li>
+            <li class="box"><a href="/#about">About</a> </li>
+            <li class="box"><a href="/#services">Services</a> </li>
+            <li class="box"><a href="/contact">Registration</a> </li>
+        </ul>
+    </div>
+    <section class="ser">
+        <h1>Wallet</h1>
+        <p>Room ID: <%= wall %>
+        </p>
+        <p>Total Charge: $<%= totalCharge.toFixed(2) %>
+        </p>
+        <!-- <button class="btn" onclick="window.location.href='/money.html';">Proceed to Payment</button> -->
+        <button class="btn-31" onclick="window.location.href='/money.html';">
+            <span class="text-container">
+                <span class="text">Proceed to Payment</span>
+            </span>
+        </button>
+    </section>
+</body>
+
+</html>
