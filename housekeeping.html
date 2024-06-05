@@ -4,9 +4,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rooms reservation center</title>
+    <title>Hotel Management System</title>
     <link rel="stylesheet" href="/style.css">
 
+    <style>
+        /* Added style for bigger buttons */
+        .service-item {
+            display: inline-block;
+            /* Display items in a single row */
+            margin-right: 10px;
+            /* Add some space between items */
+            text-align: center;
+            /* Center align the content */
+            position: relative;
+            /* Position relative for absolute positioning of price */
+            margin-bottom: 10px;
+            /* Add margin at the bottom of each button */
+        }
+
+        .service-button {
+            font-weight: bold;
+            font-size: 18px;
+            /* Increased font size */
+            padding: 10px 20px;
+            /* Increased padding for bigger buttons */
+            position: relative;
+            /* Position relative for absolute positioning of price */
+            border: 2px solid black;
+            border-radius: 8px;
+        }
+
+        .service-button:hover {
+            background-color: rgb(0, 255, 30);
+        }
+
+        /* Green button style */
+        .service-button.green {
+            background-color: green;
+            color: white;
+        }
+
+        /* Style for prices */
+        .price {
+            font-weight: bold;
+            /* Make prices bold */
+            display: block;
+            /* Put each price on a new line */
+            margin-top: 5px;
+            /* Add some space between button and price */
+        }
+
+        /* Styling for UserID input and confirm button */
+        #userID {
+            width: calc(50% - 5px);
+            padding: 8px;
+            font-size: 16px;
+            margin-left: auto;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #confirmButton {
+            width: calc(50% - 5px);
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 10px;
+            /* Adjusted padding */
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.4s ease-in-out;
+        }
+
+        #confirmButton:hover {
+            background-color: #00ff0d;
+        }
+
+        /* New style for container */
+        .container {
+            text-align: center;
+        }
+
+        /* New style for buttons container */
+        .buttons-container {
+            display: inline-block;
+        }
+
+        /* New style for user ID and confirm button container */
+        .user-id-container {
+            display: inline-block;
+            margin-top: 20px;
+            margin-left: auto;
+            /* Add margin at the top */
+        }
+    </style>
 </head>
 
 <body>
@@ -18,27 +112,95 @@
             <li class="box"><a href="/">Home</a> </li>
             <li class="box"><a href="/#about">About</a> </li>
             <li class="box"><a href="/#services">Services</a> </li>
-            <li class="box"><a href="/contact">Contact us</a> </li>
+            <li class="box"><a href="/contact">Registration</a> </li>
         </ul>
     </div>
 
     <section class="ser">
-        <h1>Welcome</h1>
+        <h1>House Keeping</h1>
         <div class="box2">
-            <form action="/housekeeping.html" method="get" class="my2">
-                <li class="box"><a href="">Dusting</a> </li>
-                <li class="box"><a href="">Mopping Floor</a> </li>
-                <li class="box"><a href="">Sweeping</a> </li>
-                <li class="box"><a href="">vacuuming</a> </li>
+            <form id="serviceForm" class="my2">
+                <!-- Service buttons container -->
+                <div class="container">
+                    <div class="buttons-container">
+                        <button type="button" class="service-button">Dusting<span class="price">Rs.500</span></button>
+                        <button type="button" class="service-button">Mopping Floor<span
+                                class="price">Rs.500</span></button>
+                        <button type="button" class="service-button">Sweeping<span class="price">Rs.500</span></button>
+                        <button type="button" class="service-button">Vacuuming<span class="price">Rs.500</span></button>
+                    </div>
+                </div>
+                <!-- User ID and confirm button container -->
+                <div class="user-id-container">
+                    <input type="text" id="userID" placeholder="Enter Room ID">
+                    <button type="submit" id="confirmButton" class="service-button">Confirm</button>
+                </div>
             </form>
-
         </div>
     </section>
     <footer>
-        | copyright @ 2024 RoomsBookingCenter.com | All rights reserved
+        | copyright @ 2024 HotelManagementSystem.com | All rights reserved
     </footer>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Define an array to store the selected services
+            let selectedServices = [];
 
+            // Adding event listeners to service buttons
+            const serviceButtons = document.querySelectorAll('.service-button');
+            serviceButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    // Toggle 'green' class for the clicked button
+                    this.classList.toggle('green');
+
+                    // If the button is green, add it to the selectedServices array; otherwise, remove it
+                    if (this.classList.contains('green')) {
+                        selectedServices.push(this.textContent.trim());
+                    } else {
+                        const index = selectedServices.indexOf(this.textContent.trim());
+                        if (index !== -1) {
+                            selectedServices.splice(index, 1);
+                        }
+                    }
+
+                    console.log('Selected services:', selectedServices); // Log selected services
+                });
+            });
+
+            const form = document.getElementById('serviceForm');
+
+            form.addEventListener('submit', function (event) {
+                // Prevent default form submission
+                event.preventDefault();
+
+                const userID = document.getElementById('userID').value;
+
+                // Send AJAX request to backend for user ID confirmation and save selected services
+                fetch('/confirmAndSaveServices', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ userID: userID, selectedServices: selectedServices })
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            // User ID exists, enable the confirmation button
+                            window.location.href = "/serviceconfirm.html"; // Redirect to service confirmation page
+                        } else {
+                            // User ID does not exist, show error message or take appropriate action
+                            alert(data.message);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error confirming user ID:', error);
+                        // Handle error
+                    });
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Management System</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="cont">
+        <div class="logo">
+            <img src="/bg.jpg" alt="Error loading image">
+        </div>
+        <ul>
+            <li class="box"><a href="/">Home</a> </li>
+            <li class="box"><a href="/#about">About</a> </li>
+            <li class="box"><a href="/#services">Services</a> </li>
+            <li class="box"><a href="/contact">Registration</a> </li>
+        </ul>
+    </div>
+
+    <section class="ser">
+        <h1>Apply Discount</h1>
+        <form id="discount" class="discount-form">
+            <!-- <input type="text" id="userID" name="userID" class="discount-input-short" placeholder="Enter Room ID"
+                required> -->
+            <!-- <div class="container">
+                <input type="text" id="userID" name="userID" class="input" required>
+                <label class="label"> Enter Room ID:</label>
+            </div> -->
+            <!-- <input type="text" name="discountCode" class="discount-input-short" placeholder="Enter discount code"
+                required> -->
+            <div class="container">
+                <input type="text" name="discountCode" class="input" required>
+                <label class="label"> Enter discount code:</label>
+            </div>
+            <!-- <button type="submit" class="btnn">Apply Discount</button> -->
+            <button type="submit" class="animated-button">
+                <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                    </path>
+                </svg>
+                <span class="text">Apply Discount</span>
+                <span class="circle"></span>
+                <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                    </path>
+                </svg>
+            </button>
+        </form>
+    </section>
+
+    <footer>
+        | copyright @ 2024 HotelManagementSystem.com | All rights reserved
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById('discount');
+
+            form.addEventListener('submit', function (event) {
+                // Prevent default form submission
+                event.preventDefault();
+
+                //const userID = document.getElementById('userID').value;
+                const discountCode = document.querySelector('input[name="discountCode"]').value;
+
+                // Send AJAX request to backend for user ID confirmation
+                fetch('/discount', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ discountCode: discountCode })
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            // Discount applied successfully
+                            window.location.href = "/success.html"; // Redirect to success page
+                        } else {
+                            // Discount code is invalid or user ID/booking status is not valid
+                            window.location.href = "/invalid.html"; // Redirect to invalid page
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error applying discount:', error);
+                        alert('An error occurred while applying the discount.');
+                    });
+            });
+        });
+    </script>
+</body>
+
+</html>
