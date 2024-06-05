@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Free Up Room</title>
     <link rel="stylesheet" href="/style.css">
 </head>
+
 <body>
     <div class="cont">
         <div class="logo">
@@ -15,18 +17,34 @@
             <li class="box"><a href="/">Home</a> </li>
             <li class="box"><a href="/#about">About</a> </li>
             <li class="box"><a href="/#services">Services</a> </li>
-            <li class="box"><a href="/contact">Contact us</a> </li>
+            <li class="box"><a href="/contact">Registration</a> </li>
         </ul>
     </div>
     <section class="ser">
         <h1>Free Up Room</h1>
         <% if (successMessage) { %>
-            <p class="success"><%= successMessage %></p>
-        <center>
-            <p>Departure Date: <span id="departureTime"></span></p>
-        </center>
-            <button class="btn" onclick="window.location.href='/money.html';">Pay Money</button>
-        <% } %>
+            <p class="success">
+                <%= successMessage %>
+            </p>
+            <center>
+                <p>Departure Date: <span id="departureTime"></span></p>
+            </center>
+            <!-- <button class="btn" onclick="window.location.href='/money.html';">Pay Money</button> -->
+            <form action="/wallet" method="get">
+                <button class="btn-31">
+                    <span class="text-container">
+                        <span class="text">Pay Money</span>
+                    </span>
+                </button>
+            </form>
+
+            <!-- <button class="btn" onclick="window.location.href='/discount.html';">Apply Discount</button> -->
+            <button class="btn-31" onclick="window.location.href='/discount.html';">
+                <span class="text-container">
+                    <span class="text">Apply Discount</span>
+                </span>
+            </button>
+            <% } %>
     </section>
     <script>
         // Get the current date and time
@@ -34,7 +52,7 @@
 
         // Format the date as desired (e.g., YYYY-MM-DD)
         const formattedDate = currentDateTime.toISOString().split('T')[0];
-        
+
         // Format the time as desired (e.g., HH:MM:SS)
         const formattedTime = currentDateTime.toLocaleTimeString();
 
@@ -42,4 +60,5 @@
         document.getElementById('departureTime').textContent = formattedDate + ', Departure Time ' + formattedTime;
     </script>
 </body>
+
 </html>
