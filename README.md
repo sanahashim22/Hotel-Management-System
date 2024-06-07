@@ -1,6 +1,7 @@
 Hotel Management System
 
 Table of Contents:
+
 Introduction,
 Features,
 Technology Stack,
